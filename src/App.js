@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
+import Preview from './components/Preview';
 import './App.css';
 
 class App extends Component {
@@ -19,10 +20,10 @@ class App extends Component {
     console.log(this.state);
     return (
       <div className="App">
-        <Dropzone onDrop={(files) => this.onDrop(files)}>
+        <Dropzone onDrop={ files => this.onDrop(files) }>
           <div>Drop an image here to see its properties</div>
         </Dropzone>
-        <img src={ this.state.image.preview }/>
+        <Preview image={ this.state.image }/>
       </div>
       )
   }
