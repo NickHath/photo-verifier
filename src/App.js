@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <div className="App">
         <Dropzone onDrop={(files) => this.onDrop(files)}>
-          <div>Try dropping some files here, or click to select files to upload.</div>
+          <div>Drop an image here to see its properties</div>
         </Dropzone>
         <img src={ this.state.image.preview }/>
       </div>
