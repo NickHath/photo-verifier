@@ -10,7 +10,7 @@ export default function Preview(props) {
         <li>Name: { props.image.name }</li>
         <li>Size: { props.image.size }</li>
         <li>Type: { props.image.type }</li>
-        <li>Last Modified: { props.image.lastModifiedDate }</li>
+        <li>Last Modified: { JSON.stringify(props.image.lastModifiedDate) }</li>
       </ul>
     </div>
   )
