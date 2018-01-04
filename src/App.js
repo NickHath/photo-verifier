@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
+
 import Preview from './components/Preview';
 import './App.css';
 

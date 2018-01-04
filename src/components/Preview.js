@@ -1,10 +1,13 @@
 import React from 'react';
+import { Cropper } from 'react-image-cropper';
 
 export default function Preview(props) {
   console.log('PREVIEW PROPS', props);
   return (
     <div className='preview-wrapper'>
-      <img src={ props.image.preview }/>
+      <div className='img-wrapper'>
+        <Cropper src={ props.image.preview } />
+      </div>
       <p>File Details:</p>
       <ul>
         <li>Name: { props.image.name }</li>
