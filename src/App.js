@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 
 import Preview from './components/Preview';
+import CompatibilityTable from './components/CompatibilityTable';
 import './App.css';
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
           <div>Drop an image here to see its properties</div>
         </Dropzone>
         <Preview image={ this.state.image }/>
+        <CompatibilityTable />
       </div>
       )
   }
