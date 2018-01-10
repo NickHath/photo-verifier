@@ -2,18 +2,21 @@ import React, { Component } from 'react';
 import { Cropper } from 'react-image-cropper';
 
 export default class Preview extends Component {
-  inspectImage() {
-    console.log(this.refs.cropper.values());
-  }
+  // inspectImage() {
+  //   console.log(this.refs.cropper.values());
+  // }
 
   render() {
     return (
       <div className='preview-wrapper'>
         <div className='img-wrapper'>
           <Cropper src={ this.props.image.preview } 
-                   styles={{ 'width': '100%', 'height': '100%' }}
+                   width='100%'
+                   height='100%'
+                   fixedRatio={ false }
                    ref='cropper'
-                   onChange={ () => this.inspectImage() }/>
+                   onImgLoad= { (values) => this.props.updateCropperSize(this.refs.cropper.values().imgWidth, this.refs.cropper.values().imgHeight) }
+                   onChange={ (values) => this.props.updateCropperSize(values.width, values.height) }/>
         </div>
         <p>File Details:</p>
         <ul>

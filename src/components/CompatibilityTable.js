@@ -4,6 +4,8 @@ import { Icon, Label, Menu, Table } from 'semantic-ui-react';
 export default class CompatibilityTable extends Component {
   render() {
     return (
+      <div className='table-wrapper'>
+        <p className='dimensions'>{ `Image Width: ${this.props.cropperSize.width}, Image Height: ${this.props.cropperSize.height}` }</p>
         <Table celled>
           <Table.Header>
             <Table.Row>
@@ -84,6 +86,7 @@ export default class CompatibilityTable extends Component {
             </Table.Row>
           </Table.Footer>
         </Table>
+      </div>
     );
   }
 }

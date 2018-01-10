@@ -8,7 +8,10 @@ import './App.css';
 class App extends Component {
   constructor() {
     super();
-    this.state = { image: {} };
+    this.state = { 
+      image: {}, 
+      cropperSize: { width: null, height: null } 
+    };
   }
 
   onDrop(acceptedFiles, rejectedFiles) {
@@ -18,15 +21,21 @@ class App extends Component {
     this.setState({ image }); 
   }
 
+  updateCropperSize(width, height) {
+    let newCropperSize = { width, height };
+    this.setState({ cropperSize: newCropperSize });
+  }
+
   render() {
-    console.log(this.state);
+    console.log('App state', this.state);
     return (
       <div className="App">
         <Dropzone onDrop={ files => this.onDrop(files) }>
           <div>Drop an image here to see its properties</div>
         </Dropzone>
-        <Preview image={ this.state.image }/>
-        <CompatibilityTable />
+        <Preview image={ this.state.image } 
+                 updateCropperSize={ (width, height) => this.updateCropperSize(width, height) }/>
+        <CompatibilityTable cropperSize={ this.state.cropperSize }/>
       </div>
       )
   }
